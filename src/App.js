@@ -2,11 +2,15 @@ import React, { useEffect, useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import MovieCard from './components/MovieCard'
+import Nav from './components/Nav'
+import Footer from './components/Footer'
+
 
 
 function App() {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
+  // const [query, setQuery] = useState('');
 
   const getData = async () => {
     const API_KEY = "504f5aa37e6fcc57fd8859d3ce9a1c19";
@@ -15,23 +19,19 @@ function App() {
     // setMovies(movies.concat(data.results))
     setMovies([...movies, ...data.results])
     console.log(movies)
-
+    setPage(page + 1)
   }
 
 
   useEffect(() => {
     getData()
   }, [])
+  
 
   return (
     <div className="App">
-      <nav className="navbar navbar-light bg-light">
-        <a className="navbar-brand" href="#1" >Navbar</a>
-        <form className="form-inline">
-          <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-          <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </nav>
+
+      <Nav />
 
       <section>
         <div className="container">
@@ -49,6 +49,9 @@ function App() {
           </div>
         </div>
       </section>
+    
+      <Footer />
+
     </div>
   );
 }

@@ -34,3 +34,15 @@
 h6 {
   font-weight: bold;
 }
+
+h4 {
+  color: #006E69;
+}
+
+.fab {
+  color:white;
+}
+
+footer {
+  background: black;
+};
