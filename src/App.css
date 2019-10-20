@@ -24,7 +24,9 @@
 .btn-more {
   width: 250px;
   margin: 30px;
-
+  background-color: #FCD15F;
+  font-weight: bold;
+  color: #040B14;
 }
 
 .title {
@@ -36,7 +38,7 @@ h6 {
 }
 
 h4 {
-  color: #006E69;
+  color: #FF6640;
 }
 
 .fab {
@@ -44,5 +46,90 @@ h4 {
 }
 
 footer {
-  background: black;
+  background: #1D232B;
 };
+
+.btn-light{
+  margin: 20px;
+  background-color: black;
+}
+
+
+section {
+  background-color: #040B14;
+}
+
+.navbar {
+  background-color: #1D232B;
+}
+
+.fas {
+  color: white;
+}
+
+*{
+ font-family: Poppins;
+}
+
+.fa-compact-disc {
+  color: #FCD15F;
+  font-size: 42px;
+}
+
+.navbar-brand {
+  color: #FCD15F;
+}
+
+.logo {
+  color: #FCD15F;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.btn-kindmovies {
+  color: #FF6640;
+  font-weight: bold;
+}
+
+.kinds {
+  display: flex;
+ 
+}
+
+
+.sort {
+  background-color: #040B14;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+}
+
+.input-group-prepend {
+  margin-top: 30px;
+}
+
+.custom-select{
+  margin-top: 30px;
+}
+
+.btn-submit {
+  color: #040B14;
+  background-color: #FCD15F;
+  font-weight: bold;
+}
+
+.web {
+  font-weight: bold;
+  color: white;
+  display: flex; 
+  justify-content: center;
+
+}
+
+.link {
+  color: #FF6640;
+}
+
+.card-body {
+  min-height: 300px;
+}

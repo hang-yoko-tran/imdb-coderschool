@@ -9,12 +9,14 @@ import Footer from './components/Footer'
 
 
 
+
+
 function App() {
   const API_KEY = "504f5aa37e6fcc57fd8859d3ce9a1c19";
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
   const [query, setQuery] = useState('');
-  const [rateSort, setRateSort] = useState('h2l');
+  const [rateSort, setRateSort] = useState('highToLow');
 
   // let query = '';
 
@@ -98,7 +100,7 @@ function App() {
   let response = await fetch(url);
   let data = await response.json();
 
-  if(selectedItem === 'l2h')
+  if(selectedItem === 'lowToHigh')
   {
     data.results.sort((a, b) => (a.vote_count > b.vote_count) ? 1 : -1)
   }
@@ -115,31 +117,32 @@ function App() {
 
   return (
     <div className="App">
-
-      <nav className="navbar navbar-light bg-light ">
-        <a className="navbar-brand" href="#1" >Navbar</a>
+      <nav className="navbar navbar-light ">
+        <div>
+        <span className="logo"><i class="fas fa-compact-disc"></i> MOVIES</span>
+        </div>
+        <div className="kinds">
+        <button type="button" className="btn btn-kindmovies" onClick={loadAllMovies}>All Movies</button>
+        <button type="button" className="btn btn-kindmovies" onClick={loadCurrentPlaying}>Currently Playing</button>
+        <button type="button" className="btn btn-kindmovies" onClick={loadTopRated}>Top Rated</button>
+        </div>
         <form className="form-inline" onSubmit={e => handleSearch(e)}>
           <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" value={query} onChange={e => { setQuery(e.target.value); }} />
-          <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <button className="btn btn-submit my-2 my-sm-0" type="submit">Search</button>
         </form>
       </nav>
-      <div className="mx-auto col-12">
+      <div className="mx-auto col-12 sort">
         <div className="input-group mb-3 col-3 ">
           <div className="input-group-prepend">
             <label className="input-group-text" for="inputGroupSelect01">Sort By Rating</label>
           </div>
           <select className="custom-select" id="inputGroupSelect01" onChange={e => handleRateSortChange(e,e.target.value)}>
-            <option value="h2l" selected>Highest to Lowest</option>
-            <option value="l2h">Lowest to Highest</option>
+            <option value="highToLow" selected>Highest to Lowest</option>
+            <option value="lowToHigh">Lowest to Highest</option>
           </select>
         </div>
       </div>
 
-      <div>
-        <button type="button" classNameName="btn btn-light" onClick={loadAllMovies}>All Movies</button>
-        <button type="button" className="btn btn-light" onClick={loadCurrentPlaying}>Currently Playing</button>
-        <button type="button" className="btn btn-light" onClick={loadTopRated}>Top Rated</button>
-      </div>
 
       <section>
         <div className="container">

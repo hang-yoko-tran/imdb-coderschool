@@ -34,8 +34,8 @@ export default function Footer() {
                         </li>
                     </ul>
                 </div>
-                <div className="footer-copyright text-center py-3">© 2018 Copyright:
-                 <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+                <div className="footer-copyright text-center py-3 web">© 2019 Copyright:
+                 <a className="link"href="https://mdbootstrap.com/education/bootstrap/">🌭hangmovies.com</a>
                 </div>
             </footer>
     )

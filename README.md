@@ -7,6 +7,6 @@ MUST HAVE FEATURES 🎯
 
 SHOULD HAVE FEATURES 🥇🏆
 [x] The user can enter a term into a search box to filter the currently loaded movies by search term. E.g.; the user can type "mar" and the results are reduced to show "Captain Marvel".
-[] The user can change the "source" from "Currently Playing" movies to "Top Rated" movies (or any other of the endpoints supplied by MovieDB).
-[] Sort by Rating and Popularity (from Lowest to Highest and Vice Versa)
+[x] The user can change the "source" from "Currently Playing" movies to "Top Rated" movies (or any other of the endpoints supplied by MovieDB).
+[x] Sort by Rating and Popularity (from Lowest to Highest and Vice Versa)
 [] Have Year, Rating as a slider. Change the display dynamically when the slider is changed. You could use React Input Range package for this task.
