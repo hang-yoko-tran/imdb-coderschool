@@ -1,3 +1,8 @@
+
+## Netlify link
+
+[Demo here](https://movies-hang-coderschool.netlify.com)
+
 MUST HAVE FEATURES 🎯
 
 [x] The user can see the top 20 "Currently Playing" movies on a page.
