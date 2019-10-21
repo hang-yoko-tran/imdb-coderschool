@@ -1,16 +1,59 @@
 import React from 'react'
 
-
-export default function navvBar(props) {
+export default function navvBar (props) {
+  let {
+    loadAllMovies,
+    loadCurrentPlaying,
+    loadTopRated,
+    handleSearch,
+    setQuery,
+    query
+  } = props
   return (
-      <nav className="navbar navbar-light bg-light " key={props.navvBar}>
-        <a className="navbar-brand" href="#1" >Navbar</a>
-        <form className="form-inline" onSubmit = {() => console.log('submitting')} onChange = { query => console.log('query',query.target.value)} >
-          <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-          <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </nav>
+    <nav className='navbar navbar-light '>
+      <div>
+        <span className='logo'>
+          <i className='fas fa-compact-disc' /> MOVIES
+        </span>
+      </div>
+      <div className='kinds'>
+        <button
+          type='button'
+          className='btn btn-kindmovies'
+          onClick={loadAllMovies}
+        >
+          All Movies
+        </button>
+        <button
+          type='button'
+          className='btn btn-kindmovies'
+          onClick={loadCurrentPlaying}
+        >
+          Currently Playing
+        </button>
+        <button
+          type='button'
+          className='btn btn-kindmovies'
+          onClick={loadTopRated}
+        >
+          Top Rated
+        </button>
+      </div>
+      <form className='form-inline' onSubmit={e => handleSearch(e)}>
+        <input
+          className='form-control mr-sm-2'
+          type='search'
+          placeholder='Search'
+          aria-label='Search'
+          value={query}
+          onChange={e => {
+            setQuery(e.target.value)
+          }}
+        />
+        <button className='btn btn-submit my-2 my-sm-0' type='submit'>
+          Search
+        </button>
+      </form>
+    </nav>
   )
 }
-
-// onChange={(query) => setQuery(query.target.value)}
