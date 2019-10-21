@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.js'
 import './App.css'
 import MovieCard from './components/MovieCard'
-// import Nav from './components/Nav'
+import Nav from './components/Nav'
 import Footer from './components/Footer'
 
 function App () {
